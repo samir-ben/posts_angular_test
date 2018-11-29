@@ -1,0 +1,18 @@
+<!-- Post unique -->
+<li class="list-group-item" [ngClass]="{
+'list-group-item-success': postLike > 0,
+'list-group-item-danger': postLike < 0}" >
+  <div class="flex-column" [ngStyle]="{color: getColor()}">
+    <div class="row">
+      <div class="col-md-8">
+        <h4>{{postName}}</h4>
+      </div>
+      <div class="col-md-4 text-right">
+        <h6 class="text-muted font-italic text-monospace">{{postDate | date: 'short' | uppercase }}</h6>
+      </div>
+    </div>
+    <p>{{postContent}}</p>
+  </div>
+  <button class="btn btn-success" (click)="addALike()">Love it!!!</button> 
+  <button class="btn btn-danger ml-2" (click)="removeALike()">Don't love it!!!</button>
+</li>
